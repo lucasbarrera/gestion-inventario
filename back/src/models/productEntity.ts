@@ -6,24 +6,35 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 
-@Entity("users")
-export class User {
+@Entity("products")
+export class Product {
   static find() {
     throw new Error("Method not implemented.");
   }
-
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
-  username: string;
+  image: string;
   @Column()
-  password: string;
+  barcode: string;
   @Column()
-  email: string;
+  name: string;
   @Column()
-  isActive: boolean;
+  description: string;
   @Column()
-  isAdmin: boolean;
+  inventary_min: number;
+  @Column()
+  price_in: number;
+  @Column()
+  price_out: number;
+  @Column()
+  unit: string;
+  @Column()
+  presentation: string;
+  @Column()
+  user_id: number;
+  @Column()
+  category_id: number;
   @CreateDateColumn()
   createdAt: Date;
   @UpdateDateColumn()
